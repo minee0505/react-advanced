@@ -3,6 +3,15 @@
 
 import {createContext} from "react";
 
-const CaetContext = createContext({});
+const defaultValue = {
+
+        cartIsShown: false,
+        openModal: () => {},
+        closeModal:  () => {},
+        cartItems: [],
+        addToCartItem: (cartItems) => {}
+};
+
+const CaetContext = createContext(defaultValue);
 
 export default CaetContext;
