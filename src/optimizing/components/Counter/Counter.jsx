@@ -59,4 +59,5 @@ const Counter = ({ initialCount }) => {
     </section>
   );
 };
-export default React.memo(Counter);
+// export default React.memo(Counter);
+export default Counter;
