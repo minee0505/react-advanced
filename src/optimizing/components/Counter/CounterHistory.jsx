@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { log } from '../../log.js';
+import { log } from '../../log';
 
 const HistoryItem = ({ count }) => {
   log('<HistoryItem /> rendered', 3);
@@ -12,11 +12,11 @@ const HistoryItem = ({ count }) => {
   };
 
   return (
-    <li
-      onClick={clickHandler}
-      className={selected ? 'selected' : undefined}>
-      {count}
-    </li>
+      <li
+          onClick={clickHandler}
+          className={selected ? 'selected' : undefined}>
+        {count}
+      </li>
   );
 };
 
@@ -24,14 +24,14 @@ const CounterHistory = ({ history }) => {
   log('<CounterHistory /> rendered', 2);
 
   return (
-    <ol>
-      {history.map((count, index) => (
-        <HistoryItem
-          key={index}
-          count={count}
-        />
-      ))}
-    </ol>
+      <ol>
+        {history.map(({ id, value }) => (
+            <HistoryItem
+                key={id}
+                count={value}
+            />
+        ))}
+      </ol>
   );
 };
 export default CounterHistory;
